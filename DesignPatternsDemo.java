@@ -1,6 +1,4 @@
 import java.util.*;
-
-// ===== Creational Pattern 1: Singleton =====
 class SingletonLogger {
     private static SingletonLogger instance;
     private SingletonLogger() {}
@@ -13,7 +11,6 @@ class SingletonLogger {
     }
 }
 
-// ===== Creational Pattern 2: Factory =====
 interface Shape { void draw(); }
 class Circle implements Shape {
     public void draw() { System.out.println("Drawing Circle"); }
@@ -29,7 +26,6 @@ class ShapeFactory {
     }
 }
 
-// ===== Structural Pattern 1: Adapter =====
 interface USBPort { void connectWithUsbCable(); }
 class OldCharger {
     public void connectWithTwoPin() { System.out.println("Connected with 2-pin charger."); }
@@ -40,7 +36,6 @@ class ChargerAdapter implements USBPort {
     public void connectWithUsbCable() { oldCharger.connectWithTwoPin(); }
 }
 
-// ===== Structural Pattern 2: Decorator =====
 interface Coffee { String getDescription(); double cost(); }
 class BasicCoffee implements Coffee {
     public String getDescription() { return "Basic Coffee"; }
@@ -53,7 +48,6 @@ class MilkDecorator implements Coffee {
     public double cost() { return coffee.cost() + 2; }
 }
 
-// ===== Behavioral Pattern 1: Observer =====
 interface Observer {
     void update(String message);
 }
@@ -72,7 +66,6 @@ class Subject {
     }
 }
 
-// ===== Behavioral Pattern 2: Strategy =====
 interface PaymentStrategy { void pay(int amount); }
 class CreditCardPayment implements PaymentStrategy {
     public void pay(int amount) { System.out.println("Paid " + amount + " using Credit Card."); }
@@ -86,7 +79,6 @@ class PaymentContext {
     public void executePayment(int amount) { strategy.pay(amount); }
 }
 
-// ===== Main Menu to Demo Patterns =====
 public class DesignPatternsDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

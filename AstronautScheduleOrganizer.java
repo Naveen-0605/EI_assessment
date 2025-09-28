@@ -1,6 +1,5 @@
 import java.util.*;
 
-// ===== Task Model =====
 class Task {
     private String title;
     private String start;
@@ -24,20 +23,17 @@ class Task {
     }
 }
 
-// ===== Factory Pattern =====
 class TaskFactory {
     public static Task create(String title, String start, String end, String priority) {
         return new Task(title, start, end, priority);
     }
 }
 
-// ===== Observer Pattern =====
 interface Notifier { void notify(String msg); }
 class ConsoleNotifier implements Notifier {
     public void notify(String msg) { System.out.println("[NOTIFY] " + msg); }
 }
 
-// ===== Singleton Manager =====
 class ScheduleManager {
     private static ScheduleManager instance;
     private List<Task> tasks = new ArrayList<>();
@@ -90,7 +86,6 @@ class ScheduleManager {
     }
 }
 
-// ===== Main Program =====
 public class AstronautScheduleOrganizer {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
